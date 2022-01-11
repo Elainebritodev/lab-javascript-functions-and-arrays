@@ -1,24 +1,85 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(number1, number2) {
+  if (number1 >= number2) {
+    return number1;
+  } else {
+    return number2;
+  }
+}
 
+//outra solução possível:
+
+/* function maxOfTwoNumbers(number1, number2){
+  return Math.max(number1, number2);
+} */
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(stringArray) {
+  if (stringArray.length === 0) {
+    return null;
+  }
+
+  let longestWord = '';
+  for (let i = 0; i < stringArray.length; i += 1) {
+    if (stringArray[i].length > longestWord.length) {
+      longestWord = stringArray[i];
+    }
+  }
+    return longestWord;
+  }
+
+  // console.log(findLongestWord(words));
+
+
+
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(numbersArray)  {
+  let sum = 0;
 
+  for (let i = 0; i < numbersArray.length; i += 1) {
+    sum += numbersArray[i];
+  } 
+    return sum;
+}
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const elemestsArray = [6, true, 'apple', 18, false, 16, 2, 1, 8, 10];
+function sum(array) {
+  let sumOfElements = 0;
+
+  for (let i = 0; i < array.length; i ++) {
+    const dataType = typeof array[i];
+
+    switch (dataType) {
+      case 'number' :
+        sumOfElements += array[i];
+        break;
+      case 'string' :
+        sumOfElements += array[i].length;
+        break;
+      case 'boolean' :
+        if (array[i]) {
+          sumOfElements += 1;
+        }
+        break;
+        default:
+          throw new Error("Unsupported data type sir or ma'am");
+    }
+  }  
+
+  return sumOfElements;
+}
+  sum(elemestsArray)
+
 
 
 
